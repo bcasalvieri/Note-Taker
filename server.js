@@ -1,5 +1,6 @@
 const express = require("express");
-const connection = require("./db/connection");
+const apiRoutes = require("./routes/apiRoutes");
+const htmlRoutes = require("./routes/htmlRoutes");
 
 // Initialize an express app
 const app = express();
