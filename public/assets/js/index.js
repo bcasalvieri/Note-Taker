@@ -1,11 +1,11 @@
 const $notes = $("#notes");
 
 // Show save note icon when title entered
-$(document).ready(function () {
+function showSaveNoteBtn() {
   $("#note-title").change(function () {
     $("#save-note").css("display", "inline");
   })
-})
+};
 
 // Adds saved notes to page
 function runNotesQuery() {
@@ -26,7 +26,7 @@ function printNote(noteInfo) {
     .text(noteInfo.title)
     .attr("data-id", noteInfo.id)
     .appendTo($li);
-  
+
   const $trashCan = $("<i>")
     .addClass("fas fa-trash-alt text-danger delete-note")
     .attr("data-id", noteInfo.id)
@@ -36,6 +36,7 @@ function printNote(noteInfo) {
 };
 
 $(document).ready(runNotesQuery);
+$(document).ready(showSaveNoteBtn);
 
 $(document).ready(function () {
   // Event listener for clicking add note button
@@ -62,13 +63,15 @@ $(document).ready(function () {
       method: "POST",
       data: newNote
     }).then(function (apiResponse) {
-      
+
     });
 
     $("#note-title").val("");
     $("#note-body").val("");
     $("#notes").empty();
     runNotesQuery();
+    $("#save-note").hide();
+    showSaveNoteBtn();
   });
 
   // Event listener for clicking delete note button
