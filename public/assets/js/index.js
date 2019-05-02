@@ -10,23 +10,27 @@ function runNotesQuery() {
 };
 
 function printNote(noteInfo) {
-  const $card = $("<div>")
-    .addClass("card mb-2")
+  const $li = $("<li>")
+    .addClass("list-group-item d-flex align-items-center justify-content-between border-top-0 py-3")
 
-  const $noteTitle = $("<div>")
-    .addClass("note card-header")
+  const $noteTitle = $("<span>")
+    .addClass("note")
     .text(noteInfo.title)
     .attr("data-id", noteInfo.id)
-    .appendTo($card);
+    .appendTo($li);
+  
+  const $trashCan = $("<i>")
+    .addClass("fas fa-trash-alt text-danger delete")
+    .appendTo($li)
 
-  $notes.append($card);
+  $notes.append($li);
 };
 
 $(document).ready(runNotesQuery);
 
 $(document).ready(function () {
   // Event listener for submitting note/click add note button
-  $("#note-form").on("submit", function (event) {
+  $("#save-note").on("click", function (event) {
     event.preventDefault();
     const newNote = {
       title: $("#note-title").val().trim(),
@@ -42,7 +46,7 @@ $(document).ready(function () {
       method: "POST",
       data: newNote
     }).then(function (apiResponse) {
-      alert(`Your note was added.`);
+      
     });
 
     $("#note-title").val("");

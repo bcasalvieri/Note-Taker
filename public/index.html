@@ -7,32 +7,31 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.8.1/css/all.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
   <title>Note Taker</title>
 </head>
 
 <body>
 
-  <div class="jumbotron">
-    <div class="container text-center">
-      <h1 class="display-1">Note Taker</h1>
+  <nav class="navbar navbar-dark bg-danger">
+    <a class="navbar-brand" href="/">NoteTaker</a>
+    <div class="icons">
+      <i id="save-note" class="fa fa-save text-light mr-4"></i>
+      <i id="add-note" class="fa fa-file-plus text-light mr-3"></i>
     </div>
-  </div>
+  </nav>
 
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
-      <aside class="col-12 col-sm-4">
-        <h3>Saved Notes</h3>
-        <div id="notes"></div>
+      <aside class="col-12 col-sm-4 list-container">
+        <div class="card">
+          <ul id="notes" class="list-group"></ul>
+        </div>
       </aside>
 
       <section class="col-12 col-sm-8">
-        <h3>Add or Edit a Note</h3>
-        <form method="post" role="form" id="note-form">
-          <input type="text" id="note-title" class="form-control mb-3" placeholder="Title">
-          <textarea name="note-body" id="note-body" class="col-12 form-control mb-3" rows="10" placeholder="Notes"></textarea>
-          <button class="btn btn-lg btn-success mr-2" type="submit"><i class="far fa-save mr-1"></i> Save Note</button>
-          <button id="delete-btn" class="btn btn-lg btn-danger"><i class="far fa-file-times mr-1"></i> Delete Note</button>
+        <input type="text" id="note-title" class="mb-3" placeholder="Note Title">
+        <textarea id="note-body" rows="30" placeholder="Note Text"></textarea>
         </form>
       </section>
     </div>

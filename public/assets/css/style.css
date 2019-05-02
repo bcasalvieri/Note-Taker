@@ -1,0 +1,40 @@
+.navbar-brand {
+  font-size: 1.25vw;
+}
+
+.icons {
+  font-size: 1.5vw;
+}
+
+#note-title,
+#note-body {
+  border: none;
+  padding: 0;
+}
+
+#note-title {
+  font-size: 2.5rem;
+}
+
+#note-body {
+  width: 100%;
+}
+
+.list-container {
+  padding-left: 0;
+}
+
+.list-container, .card {
+  height: calc(100vh - 72px);
+  border-bottom: none;
+}
+
+.list-container, .list-group-item {
+  border-right: none;
+  border-left: none;
+}
+
+.list-group {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
