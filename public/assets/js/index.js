@@ -1,5 +1,11 @@
 const $notes = $("#notes");
 
+$(document).ready(function () {
+  $("#note-title").change(function () {
+    $("#save-note").css("display", "inline");
+  })
+})
+
 function runNotesQuery() {
   $.ajax({
     url: "/api/notes",
