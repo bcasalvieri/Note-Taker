@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.8.1/css/all.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Note Taker</title>
+</head>
+
+<body>
+
+  <div class="jumbotron">
+    <div class="container text-center">
+      <h1 class="display-1">Note Taker</h1>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <aside class="col-12 col-sm-4">
+        <h3>Saved Notes</h3>
+        <div id="notes"></div>
+      </aside>
+
+      <section class="col-12 col-sm-8">
+        <h3>Add or Edit a Note</h3>
+        <form method="post" role="form" id="note-form">
+          <input type="text" id="note-title" class="form-control mb-3" placeholder="Title">
+          <textarea name="note-body" id="note-body" class="col-12 form-control mb-3" rows="10" placeholder="Notes"></textarea>
+          <button class="btn btn-lg btn-success mr-2" type="submit"><i class="far fa-save mr-1"></i> Save Note</button>
+          <button class="btn btn-lg btn-danger"><i class="far fa-file-times mr-1"></i> Delete Note</button>
+        </form>
+      </section>
+    </div>
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="./assets/js/index.js"></script>
+</body>
+
+</html>
