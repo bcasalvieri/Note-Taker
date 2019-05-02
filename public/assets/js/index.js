@@ -20,7 +20,7 @@ function printNote(noteInfo) {
     .appendTo($li);
   
   const $trashCan = $("<i>")
-    .addClass("fas fa-trash-alt text-danger delete")
+    .addClass("fas fa-trash-alt text-danger delete-note")
     .appendTo($li)
 
   $notes.append($li);
@@ -29,7 +29,14 @@ function printNote(noteInfo) {
 $(document).ready(runNotesQuery);
 
 $(document).ready(function () {
-  // Event listener for submitting note/click add note button
+  // Event listener for clicking add note button
+  $("#add-note").on("click", function (event) {
+    event.preventDefault();
+    $("#note-title").val("");
+    $("#note-body").val("");
+  })
+
+  // Event listener for clicking save note button
   $("#save-note").on("click", function (event) {
     event.preventDefault();
     const newNote = {
@@ -56,7 +63,7 @@ $(document).ready(function () {
   });
 
   // Event listener for clicking delete note button
-  $("#delete-btn").on("click", function (event) {
+  $(document).on("click", ".delete-note", function (event) {
     event.preventDefault();
     $.ajax({
       url: "/api/notes",
