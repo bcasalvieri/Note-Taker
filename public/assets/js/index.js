@@ -1,11 +1,13 @@
 const $notes = $("#notes");
 
+// Show save note icon when title entered
 $(document).ready(function () {
   $("#note-title").change(function () {
     $("#save-note").css("display", "inline");
   })
 })
 
+// Adds saved notes to page
 function runNotesQuery() {
   $.ajax({
     url: "/api/notes",
@@ -38,8 +40,8 @@ $(document).ready(function () {
   // Event listener for clicking add note button
   $("#add-note").on("click", function (event) {
     event.preventDefault();
-    $("#note-title").val("");
-    $("#note-body").val("");
+    $("#note-title").val("").removeAttr("readonly");
+    $("#note-body").val("").removeAttr("readonly");
   })
 
   // Event listener for clicking save note button
@@ -101,4 +103,7 @@ $(document).on("click", ".note", function () {
       };
     });
   });
+
+  $("#note-title").attr("readonly", "readonly");
+  $("#note-body").attr("readonly", "readonly");
 });
