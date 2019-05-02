@@ -80,7 +80,7 @@ $(document).ready(function () {
       $("#note-title").val("");
       $("#note-body").val("");
       $("#notes").empty();
-      unNotesQuery();
+      runNotesQuery();
     });
   });
 

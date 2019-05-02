@@ -1,10 +1,9 @@
 .navbar-brand {
-  font-size: 1.25vw;
+  font-size: 2rem;
 }
 
 .icons {
-  font-size: 1.25vw;
-  cursor: pointer;
+  font-size: 2rem;
 }
 
 #note-title,
@@ -14,7 +13,7 @@
 }
 
 #note-title {
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 
 #note-body {
@@ -35,7 +34,9 @@
   border-left: none;
 }
 
-.list-group-item {
+.list-group-item span,
+.icons,
+.delete-note {
   cursor: pointer;
 }
 
@@ -50,5 +51,5 @@ textarea:focus {
 }
 
 .delete-note {
-  font-size: 0.75vw;
+  font-size: 1.4rem;
 }
