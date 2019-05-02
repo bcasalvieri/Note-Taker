@@ -8,4 +8,3 @@ CREATE TABLE notes (
   body TEXT NOT NULL,
   PRIMARY KEY (id)
 );
-

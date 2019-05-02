@@ -11,7 +11,7 @@ function runNotesQuery() {
 
 function printNote(noteInfo) {
   const $card = $("<div>")
-    .addClass("card")
+    .addClass("card mb-2")
 
   const $noteTitle = $("<div>")
     .addClass("card-header")
