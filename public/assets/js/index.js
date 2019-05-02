@@ -78,7 +78,7 @@ $(document).on("click", ".note", function () {
     method: "GET"
   }).then(function (notesData) {
     notesData.forEach(note => {
-      if (note.id === noteId) {
+      if (parseInt(note.id) === parseInt(noteId)) {
         $("#note-title").val(note.title);
         $("#note-body").val(note.body);
       };
