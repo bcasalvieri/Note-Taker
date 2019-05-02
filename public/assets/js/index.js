@@ -19,7 +19,7 @@ function runNotesQuery() {
 
 function printNote(noteInfo) {
   const $li = $("<li>")
-    .addClass("list-group-item d-flex align-items-center justify-content-between border-top-0 py-3")
+    .addClass("list-group-item d-flex align-items-center justify-content-between border-top-0 border-bottom py-3");
 
   const $noteTitle = $("<span>")
     .addClass("note")
@@ -29,7 +29,8 @@ function printNote(noteInfo) {
   
   const $trashCan = $("<i>")
     .addClass("fas fa-trash-alt text-danger delete-note")
-    .appendTo($li)
+    .attr("data-id", noteInfo.id)
+    .appendTo($li);
 
   $notes.append($li);
 };
@@ -74,7 +75,7 @@ $(document).ready(function () {
   $(document).on("click", ".delete-note", function (event) {
     event.preventDefault();
     $.ajax({
-      url: "/api/notes",
+      url: "/api/notes/" + $(this).attr("data-id"),
       method: "DELETE"
     }).then(function () {
       $("#note-title").val("");
@@ -106,4 +107,5 @@ $(document).on("click", ".note", function () {
 
   $("#note-title").attr("readonly", "readonly");
   $("#note-body").attr("readonly", "readonly");
+  $("#save-note").hide()
 });

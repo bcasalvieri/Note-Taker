@@ -18,8 +18,8 @@ router.post("/api/notes", function (req, res) {
 });
 
 // Delete a note from the database using id
-router.delete("/api/notes", function (req, res) {
-  connection.query("DELETE FROM notes WHERE ?", {title: req.params.title},  function (err, result) {
+router.delete("/api/notes/:id", function (req, res) {
+  connection.query("DELETE FROM notes WHERE ?", {id: req.params.id},  function (err, result) {
     if (err) throw err;
     res.json(result);
   });
